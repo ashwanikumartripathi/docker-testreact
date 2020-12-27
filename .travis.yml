@@ -3,6 +3,7 @@ services:
  - docker
 before_install:
  - docker build -t ashwanikumartripathi/docker-testreact -f Dockerfile.dev .
+ 
 script:
  - docker run ashwanikumartripathi/docker-testreact npm run test -- --coverage
 deploy:
