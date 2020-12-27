@@ -5,3 +5,13 @@ before_install:
  - docker build -t ashwanikumartripathi/docker-testreact -f Dockerfile.dev .
 script:
  - docker run ashwanikumartripathi/docker-testreact npm run test -- --coverage
+deploy:
+ provider: elasticbeanstalk
+ region: "ap-south-1"
+ app: "docker-testreact"
+ env: "DockerTestreact-env"
+ bucket_name: "elasticbeanstalk-ap-south-1-125030623467"
+ bucket_path: "docker-testreact"
+ on:
+  branch: master
+  
