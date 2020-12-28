@@ -6,15 +6,15 @@ before_install:
  
 script:
  - docker run -e CI=true ashwanikumartripathi/docker-testreact npm run test -- --coverage
-deploy:
- provider: elasticbeanstalk
- region: "ap-south-1"
- app: "docker-testreact"
- env: "DockerTestreact-env"
- bucket_name: "elasticbeanstalk-ap-south-1-125030623467"
- bucket_path: "docker-testreact"
- on:
-  branch: master
- access_key_id: $AWS_ACCESS_KEY
- secret_access_key: "$AWS_SECRET_KEY"
+#deploy:
+# provider: elasticbeanstalk
+ #region: "ap-south-1"
+ #app: "docker-testreact"
+# env: "DockerTestreact-env"
+# bucket_name: "elasticbeanstalk-ap-south-1-125030623467"
+# bucket_path: "docker-testreact"
+# on:
+#  branch: master
+# access_key_id: $AWS_ACCESS_KEY
+# secret_access_key: "$AWS_SECRET_KEY"
   
